@@ -16,6 +16,9 @@
 
 
     function addOptions(){
+        register_nav_menu("MenuHeaderNav", "Menu Header princiapl");
+        register_nav_menu("MenuExploreFooter", "Menu Explorer footer");
+        register_nav_menu("MenuLearnFooter", "Menu Learn footer");
         add_theme_support("title-tag");
     }
 
