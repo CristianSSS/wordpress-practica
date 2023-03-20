@@ -44,7 +44,19 @@
         <div class="full-width-split__inner">
           <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
 
-          <div class="event-summary">
+          <?php
+            
+            $homePagePosts= new WP_Query(array(
+              "posts_per_page"=>2
+            ));
+
+            while($homePagePosts->have_posts()){
+              $homePagePosts->the_post(); ?>
+            <li><a href="<?php echo the_permalink(); ?>"><?php the_title() ?></a></li>
+          <?php
+          }
+          ?>
+          <!-- <div class="event-summary">
             <a class="event-summary__date event-summary__date--beige t-center" href="#">
               <span class="event-summary__month">Jan</span>
               <span class="event-summary__day">20</span>
@@ -53,7 +65,7 @@
               <h5 class="event-summary__title headline headline--tiny"><a href="#">We Were Voted Best School</a></h5>
               <p>For the 100th year in a row we are voted #1. <a href="#" class="nu gray">Read more</a></p>
             </div>
-          </div>
+          </div> -->
           <div class="event-summary">
             <a class="event-summary__date event-summary__date--beige t-center" href="#">
               <span class="event-summary__month">Feb</span>
